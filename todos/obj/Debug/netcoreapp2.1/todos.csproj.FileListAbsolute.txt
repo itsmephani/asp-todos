@@ -1,0 +1,14 @@
+/Users/phani/Repo/Phani/asp/todos/todos/bin/Debug/netcoreapp2.1/todos.deps.json
+/Users/phani/Repo/Phani/asp/todos/todos/bin/Debug/netcoreapp2.1/todos.runtimeconfig.json
+/Users/phani/Repo/Phani/asp/todos/todos/bin/Debug/netcoreapp2.1/todos.runtimeconfig.dev.json
+/Users/phani/Repo/Phani/asp/todos/todos/bin/Debug/netcoreapp2.1/todos.dll
+/Users/phani/Repo/Phani/asp/todos/todos/bin/Debug/netcoreapp2.1/todos.pdb
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.csprojAssemblyReference.cache
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.csproj.CoreCompileInputs.cache
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.RazorAssemblyInfo.cache
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.RazorAssemblyInfo.cs
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.AssemblyInfoInputs.cache
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.AssemblyInfo.cs
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.RazorTargetAssemblyInfo.cache
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.dll
+/Users/phani/Repo/Phani/asp/todos/todos/obj/Debug/netcoreapp2.1/todos.pdb
