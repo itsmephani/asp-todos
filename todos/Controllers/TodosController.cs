@@ -12,11 +12,13 @@ namespace todos.Controllers
     [Route("api/[controller]")]
     public class TodosController : Controller
     {
-        // GET: api/values
+        // GET: api/todos
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public IActionResult Get() {
+            using (var context = new TodosContext())
+            {
+                return Ok(context.Todos.ToList());
+            }
         }
 
         // GET api/values/5
