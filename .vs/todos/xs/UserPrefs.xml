@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{4D11ADE2-AA60-46EC-95D0-4CDF49ABD62E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="todos/Models/Todo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="todos/Controllers/TodosController.cs">
     <Files>
-      <File FileName="todos/Controllers/TodosController.cs" Line="19" Column="14" />
-      <File FileName="todos/TodosContext.cs" Line="18" Column="50" />
-      <File FileName="todos/Models/Todo.cs" Line="10" Column="9" />
+      <File FileName="todos/Models/Todo.cs" Line="10" Column="23" />
+      <File FileName="todos/TodosContext.cs" Line="18" Column="75" />
+      <File FileName="todos/Controllers/TodosController.cs" Line="51" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

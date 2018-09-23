@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using todos.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,13 +13,16 @@ namespace todos.Controllers
     [Route("api/[controller]")]
     public class TodosController : Controller
     {
+        private TodosContext _context {get; set;}
+
+        public TodosController() {
+            _context = new TodosContext();
+        }
+
         // GET: api/todos
         [HttpGet]
         public IActionResult Get() {
-            using (var context = new TodosContext())
-            {
-                return Ok(context.Todos.ToList());
-            }
+            return Ok(_context.Todos.ToList());
         }
 
         // GET api/values/5
@@ -28,35 +32,50 @@ namespace todos.Controllers
             return $"value {id}";
         }
 
-        // POST api/values
+        // POST api/todos
         [HttpPost]
         public IActionResult Post([FromBody]Todo todo)
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 //throw new InvalidOperationException("Invalid");
                 return BadRequest(ModelState);
             }
 
-            return CreatedAtAction("Get", new {id = todo.Id}, todo);
+            var createdTodo = _context.Todos.Add(new Todo {
+                Description = todo.Description, 
+                IsDone = todo.IsDone
+            });
+            _context.SaveChanges();
+
+            return CreatedAtAction("Post", createdTodo);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Todo todo)
+        // PUT api/todos/{id}
+        [HttpPut("{id=int}")]
+        public IActionResult Put(int id, [FromBody]Todo todo)
         {
+            var updatedTodo = _context.Todos.Update(new Todo
+            {
+                Id = todo.Id,
+                Description = todo.Description,
+                IsDone = todo.IsDone
+            });
+            _context.SaveChanges();
+
+            // Different name from action name in first argument throwing
+            // no route found error.
+            return CreatedAtAction("Put", updatedTodo);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            _context.Todos.Remove(_context.Todos.Find(id));
+            _context.SaveChanges();
+
+            return CreatedAtAction("Delete", new { mesasge = "Todo removed Successfully"});
         }
-    }
-
-    public class Todo {
-        public int Id { get; set; }
-
-        [MinLength(10)]
-        public string Text { get; set; }
     }
 }
